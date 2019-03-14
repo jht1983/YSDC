@@ -1,0 +1,516 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>主界面</title>
+<style>
+    	.Ttable,
+			.Ttable tr th,
+			.Ttable tr td {
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-right: 1px solid #000;
+				border-left: 1px solid #000;
+				text-align:center;
+				
+			}
+			.Ttable {
+				width:100%;
+				min-height: 35px;
+				line-height: 35px;
+				border-collapse: collapse;
+			}
+			.radioW{
+			    width: 20px;height: 20px;
+			}
+			.texIndt{
+			    word-wrap:break-word; 
+			    word-break:break-all;
+			    text-indent: 2em;
+			    text-align:left !important; 
+			}
+						body{
+			    padding:0;  /*去除内边距*/
+                border:0;   /*去除边框*/
+                margin:0;   /*去除外边距*/
+                height:100%;
+                width:100%
+			}
+			html{
+			    height:100%;
+                width:100%
+			}
+</style>
+</head>
+
+<body>
+    <div style="width: 100%;height: 100%;">
+        <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; height:100%;text-align: center">
+            <col width="20%">
+            <col>
+            <col width="20%">
+            <tr style="height:5%">
+                <td colspan="3"></td>
+            </tr>
+            <tr id="widthValue" style="height:15%">
+                <td  colspan="2" style="border-bottom: 5px solid black;text-align: left">
+                    <img  id="pngV" src="res/images/qqqqq.png" style="height: 0px"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table style="width:100%;height: 100%;text-align: center">
+                        <tr>
+                            <td>
+                                <h1>
+                                    350MW机组值长运行日志
+                                </h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3 id="SYS_RQ2">
+                                    年    月
+                                </h3>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+            <tr style="height:15%">
+                <td >
+
+                </td>
+                <td  style="border-top: 5px solid black">
+                    <h3>
+                        榆能榆神热电有限公司
+                    </h3>
+                </td>
+                <td  style="border-top: 5px solid black">
+                </td>
+            </tr>
+            <tr style="height:5%">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById("pngV").style.height=document.getElementById("widthValue").offsetHeight+"px";
+    </script>
+    
+    
+    <table class="Ttable">
+        <tr>
+            <th>
+                350MW机组值长运行日志
+            </th>
+        </tr>
+    </table>
+    <ylt.for dataId="1509586559972">
+                <table class="Ttable">
+            <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+            <tr>
+               <td>日期： </td>
+               <td id="SYS_RQ">$value </td>
+               <td>星期:</td>
+               <td>$value </td>
+               <td>班次： </td>
+               <td>$value </td>
+               <td>值别： </td>
+               <td>$value </td>
+               <td>天气： </td>
+               <td>$value </td>
+            </tr>
+        </table>
+    <table width="100%" class="Ttable">
+        <tr>
+            <td colspan="8">
+                接班主要参数																										
+            </td>
+        </tr>
+        <tr>
+            <td >
+                名称	
+            </td>
+            <td >
+                数值			
+            </td>
+            <td >
+                名称																										
+            </td>
+            <td >
+                数值																										
+            </td>
+            <td >
+                名称																										
+            </td>
+            <td >
+                数值																										
+            </td>
+            <td >
+                名称																										
+            </td>
+            <td >
+                数值																										
+            </td>
+        </tr>
+        <tr>
+            <td >
+                #1／#2机组有功MW	
+            </td>
+            <td >
+                $value／$value			
+            </td>
+            <td >
+                #1／#2机组背压KPa																										
+            </td>
+            <td >
+                $value／$value																											
+            </td>
+            <td >
+                #1／#2除盐水箱液位m																										
+            </td>
+            <td >
+                $value／$value																									
+            </td>
+            <td >
+                煤场存煤量																										
+            </td>
+            <td >
+                $value																										
+            </td>
+        </tr>
+        <tr>
+            <td >
+                #1--#4氢罐压力MPa	
+            </td>
+            <td >
+                $value	
+            </td>
+            <td >
+                #1／#2机供热抽汽量																										
+            </td>
+            <td >
+                $value／$value																											
+            </td>
+            <td >
+                热网压力／热网温度																									
+            </td>
+            <td >
+                $value／$value																									
+            </td>
+            <td >
+                #1／#2机主汽流量																										
+            </td>
+            <td >
+                $value／$value																										
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+               330kV系统运行方式																										
+            </td>
+        </tr>
+        
+        
+         <tr>
+            <td >
+                330KV正常方式	
+            </td>
+            <td >
+                $value			
+            </td>
+            <td >
+                330KV非正常方式																									
+            </td>
+            <td >
+                $value																										
+            </td>
+            <td >
+                #1／#2机AGC																									
+            </td>
+            <td >
+                $value／$value																									
+            </td>
+            <td >
+                #1／#2机AVC																										
+            </td>
+            <td >
+                $value／$value																										
+            </td>
+        </tr>
+        <tr>
+            <td >
+                云横Ⅰ线3351开关	
+            </td>
+            <td >
+                $value		
+            </td>
+            <td >
+               云榆Ⅰ线3352开关																									
+            </td>
+            <td >
+                $value																											
+            </td>
+            <td >
+                云榆Ⅱ线3353开关																							
+            </td>
+            <td >
+                $value																									
+            </td>
+            <td >
+                云横Ⅱ线3354开关																									
+            </td>
+            <td >
+                $value																										
+            </td>
+        </tr>
+         <tr>
+            <td >
+               #1发变组3301开关	
+            </td>
+            <td >
+                $value			
+            </td>
+            <td >
+                #2发变组3302开关																									
+            </td>
+            <td >
+                $value																											
+            </td>
+            <td >
+                母联3312开关																									
+            </td>
+            <td >
+                $value																								
+            </td>
+            <td >
+                0号启备变3311开关																								
+            </td>
+            <td >
+                $value																										
+            </td>
+        </tr>
+ 
+        
+    </table>
+    </ylt.for>
+    <div id="ppap" style="width:100%">
+		
+	</div>
+	<ylt.for dataId="1517191184025">
+	    
+	
+	<table width="100%" class="Ttable" style="min-height: 40px;	line-height: 40px;">
+	    <col width='20%'/>
+	    <col width=''/>
+	    <col width='20%'/>
+	    <col width=''/>
+	    <col width='20%'/>
+	    <col width=''/>
+	    <tr>
+	        <td>总排/#1／#2机组SO2</td>
+	        <td>$value／$value／$value</td>
+	        <td>总排/#1／#2机组NOX</td>
+	        <td>$value／$value／$value</td>
+	        <td>总排/#1／#2炉粉尘</td>
+	        <td>$value／$value／$value</td>
+	    </tr>
+	</table>
+	</ylt.for>
+	
+	<table width="100%" class="Ttable" style="min-height: 40px;	line-height: 40px;">
+	    <col width='20%'/>
+		<col width=''/>
+	    <tr>
+	        <td>接地刀及地线位置</td>
+	        <td id="jddzvalue" class="texIndt">
+	            
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>重大缺陷</td>
+	        <td id="zdqxvalue"class="texIndt">
+	            
+	        </td>
+	    </tr>
+	</table>
+	<table width="100%" class="Ttable">
+
+		<col width='10%'/>
+		<col width='10%'/>
+		<col width='80%'/>
+
+		<tr>
+			<td colspan="">
+			    序号
+			</td>
+			<td>
+				时间    
+			</td>
+			<td>
+				工作内容
+			</td>
+		</tr>
+        <ylt.for dataId="1509498331920">
+            <tr>
+			<td name="serialNumber">
+				$value
+			</td>
+			<td>
+				$value
+			</td>
+			<td  class="texIndt" style="word-wrap:break-word; word-break:break-all;" >
+				$value
+			</td>
+		</tr>
+        </ylt.for>
+	</table>
+	<ylt.for dataId="1516845353122">
+	    <script>
+	        document.getElementById('jddzvalue').innerHTML="$value";
+	        document.getElementById('zdqxvalue').innerHTML="$value";
+	    </script>
+	<table width="100%" class="Ttable">
+	    <!--//1516845353122-->
+        
+        <col width='10%'/>
+		<col width='10%'/>
+		<col width='80%'/>
+		<tr>
+		    <td>
+		        重要交待
+		    </td>
+		    <td  colspan="2"  class="texIndt">
+		        $value
+		    </td>
+		</tr>
+		<tr>
+		    <td>
+		        领导阅示
+		    </td>
+		    <td  colspan="2" class="texIndt">
+		        
+		    </td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="10" cellspacing="10" style="width:100%;min-height: 30px;line-height: 25px;border-collapse: collapse;">
+	    <col width='10%'/>
+		<col width='10%'/>
+		<col width=''/>
+		<col width='10%'/>
+		<col width=''/>
+		<col width='10%'/>
+		<col width=''/>
+		
+	    <tr>
+	        <td></td>
+	        <td>
+	            交班值长：
+	        </td>
+	        <td>
+	          $value
+	        </td>
+	         <td>
+	            接班值长：
+	        </td>
+	         <td>
+	            $value
+	        </td>
+	         <td>
+	            交接时间：
+	        </td>
+	         <td>
+	           $value
+	        </td>
+
+	    </tr>
+	    
+	</table>
+	</ylt.for>
+</body>
+<script>
+<ylt.v message="SBYXFS">/*一组几个*/
+    var SBYXFS="2";
+$value
+    var SBYXFS="$value";
+</ylt.v>
+<ylt.v message="indexName">/*一行几组*/
+    var indexName="1";
+$value
+    var indexName="$value";
+</ylt.v>
+
+    var SBYXFSStare="<td>设备名称 </td><td>运行 </td><td>备用 </td><td>检修 </td>";
+
+</script>
+<script>
+        var index = 0;
+		var bl = SBYXFS; /*一组几个*/
+
+    	var insertHtml="";
+        var S_ID="";
+        var S_SBMC="";
+        var P="";
+        var N="";
+        var X="";
+
+    <ylt.for dataId="1509498346632">
+
+            S_ID="$value";
+        	S_SBMC="$value";
+        	P="$value";
+        	N="$value";
+        	X="$value";
+			if(S_ID.length<4){
+				if(bl!=0){
+					insertHtml+="</table>";
+				}
+				insertHtml+="<table class='Ttable'  style='float: left;width:"+100/indexName+"%'>";
+				for(var z=0;z<bl;z++){
+					insertHtml+="<col width='"+100*(0.4/bl)+"%' /><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/>";
+				}
+				insertHtml+="<tr ><td colspan='"+4*bl+"'>"+S_SBMC+"</td></tr><tr>";
+				for(var z=0;z<bl;z++){
+					insertHtml+=SBYXFSStare;
+				}
+				insertHtml+="</tr>"
+			}else{
+				if(index < bl) {
+					insertHtml += "<td>"+S_SBMC+" </td><td>"+N+" </td><td>"+P+" </td><td>"+X+" </td>";
+					index++;
+				} else {
+					insertHtml += "</tr><tr>";
+				    insertHtml += "<td>"+S_SBMC+" </td><td>"+N+" </td><td>"+P+" </td><td>"+X+" </td>";
+    				index = 1;
+				}
+			}
+	
+		</ylt.for>
+        document.getElementById("ppap").innerHTML=insertHtml;
+        
+        window.print();
+    document.title="值长运行日志";
+    document.getElementById('SYS_RQ2').innerHTML=document.getElementById('SYS_RQ').innerHTML;
+    
+    
+    
+    var serialNumber = document.getElementsByName('serialNumber');
+    for(var i = 0 ; i < serialNumber.length ;i++){
+        serialNumber[i].innerHTML=i+1;
+    }
+    
+</script>
+</html>
+    

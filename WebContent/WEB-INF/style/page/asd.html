@@ -1,0 +1,49 @@
+<style>.tb{
+            width: 100%;
+       
+            /*border-collapse: collapse;*/
+        }
+        /*  .tb td{*/
+        /*    height:20px;*/
+        /*   border:1px solid #000;*/
+       
+             
+        /*}*/
+        .tb td{
+            height:20px;
+           border-bottom:1px solid #000;
+             border-left:1px solid #000;
+             
+        }
+         .tb tr:first-child>td{
+          
+            border-top:1px solid #000;
+        }
+      .tb th{
+          
+            border-bottom:1px solid #000;
+        }
+        .tb td:last-child{
+          
+            border-right:1px solid #000;
+        }
+        
+        body{
+        font-size:13px;
+        color:#000000;
+        }
+</style><script type='text/javascript' src='res/js/alertfField.js?v=2.0'></script>
+<body>
+	<!--startprint-->
+
+		<div style="text-align: center"><p algin="center" style="text-align:center;font-size:28px">榆能榆神热电公司电气倒闸操作票</p></div><table style="width: 100%" class="tbTopN" cellspacing="0" cellpadding="2"><colgroup><col width="13%"/><col width="13%"/><col width="13%"/><col width="13%"/><col width="13%"/><col width=""/></colgroup><ylt.for dataId="1508936207136"><tr style="font-size:17px;"><td style="border-right:none;">运行值次:</td><td style="border-right:none;border-left:none;" id="yxzc">$value</td><td style="border-right:none;border-left:none;"></td><td style="border-right:none;border-left:none;"></td><td style="border-right:none;border-left:none;">编号:</td><td style=" border-right:1px solid #000;border-left:none;" id="bh">$value</td></tr><tr style=""><td>发令人:</td><td>$value</td><td>受令人:</td><td>$value</td><td>发令时间:</td><td><span name="upDat">$value</span></td></tr><tr style="font-size:17px;"><td colspan="6"><span style="width: 20%">操作开始时间:</span><span style="width: 30%">&#160;&#160;&#160;&#160;&#160;年&#160;&#160;&#160;&#160;&#160;月&#160;&#160;&#160;&#160;&#160;日&#160;&#160;&#160;&#160;&#160;时&#160;&#160;&#160;&#160;&#160;分</span><span style="width: 20%">结束时间:</span><span style="width: 30%">&#160;&#160;&#160;&#160;&#160;年&#160;&#160;&#160;&#160;&#160;月&#160;&#160;&#160;&#160;&#160;日&#160;&#160;&#160;&#160;&#160;时&#160;&#160;&#160;&#160;&#160;分</span></td></tr><tr style="font-size:17px;"><td colspan="6"><span style="width: 20%;">操作任务:</span><span style="width: 80%;text-align: left" id="czrw">$value</span></td></tr></ylt.for></table>
+
+	<script>
+	    /*dataFormat("upDat","yyyy年MM月dd日 hh时mm分");*/
+	     dataFormat("upDat","<u>yyyy</u>年<u>MM</u>月<u>dd</u>日 <u>hh</u>时<u>mm</u>分");
+
+
+    window.print();
+	</script>
+</body>
+</html>

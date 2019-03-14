@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:100%;
+            margin: 0px auto;
+        }
+        tr{
+            height: 30px;
+        }
+        td{
+            text-align: center;
+        }
+        span{
+            display: inline-block;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        .tbal td{
+            border: 1px solid #000;
+        }
+           body{
+	font-size:15px;
+	color:#000000;
+}
+
+
+  .tbTopN td{
+          
+            border-top:1px solid #000;
+            border-left:1px solid #000;
+            border-right:1px solid #000;
+        }
+
+       .tbTopN th {
+          
+            border-top:1px solid #000;
+            border-left:1px solid #000;
+            border-right:1px solid #000;
+        }
+
+ .tbBtmN td{
+          
+            border-bottom:1px solid #000;
+            border-left:1px solid #000;
+            border-right:1px solid #000;
+        }
+       .tbBtmN th{
+          
+            border-bottom:1px solid #000;
+            border-left:1px solid #000;
+            border-right:1px solid #000;
+        }
+        
+.PageNext{page-break-after: always;} 
+    </style>
+        <script type='text/javascript' src='res/js/alertfField.js?v=2.0'></script>
+</head>
+<body>
+<h1 style="text-align: center;"><strong>变压器油分析报告</strong></h1>
+<table style="margin-left: auto; margin-right: auto;" border="1" cellspacing="0">
+<tbody>
+    <ylt.for dataId="1545900915342">    
+<tr>
+<td colspan="2" width="164">
+<p>取样日期</p>
+</td>
+<td width="130">
+<p>$value</p>
+</td>
+<td width="105">
+<p>取样地点</p>
+</td>
+<td width="125">
+<p>$value</p>
+</td>
+<td  width="85">
+<p>取样员</p>
+</td>
+<td colspan="2" width="131">
+<p>$value</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="164">
+<p>分析日期</p>
+</td>
+<td width="130">
+<p>$value</p>
+</td>
+<td width="105">
+<p>报告日期</p>
+</td>
+<td colspan="4" width="341">
+<p>$value</p>
+</td>
+</tr>
+</ylt.for>
+<tr>
+<td rowspan="2" width="42">
+<p>序号</p>
+</td>
+<td rowspan="2" width="122">
+<p>项目</p>
+</td>
+<td rowspan="2" width="130">
+<p>分析结果</p>
+</td>
+<td colspan="4" width="296">
+<p>质量指标</p>
+</td>
+<td rowspan="2" width="151">
+<p>执行标准</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="140">
+<p>投入运行前的油</p>
+</td>
+<td colspan="2" width="155">
+<p>运行油</p>
+</td>
+</tr>
+<ylt.for dataId="1545900932284"> 
+<tr>
+<td width="42">
+<p>$value</p>
+</td>
+<td width="122">
+<p>$value</p>
+</td>
+<td width="130">
+<p>$value</p>
+</td>
+<td colspan="2" width="140">
+<p>$value</p>
+</td>
+<td colspan="2" width="155">
+<p>$value</p>
+</td>
+<td width="151">
+<p>$value</p>
+</td>
+</ylt.for>  
+
+</tr>
+<ylt.for dataId="1545900947081"> 
+<tr>
+<td colspan="8" width="742">
+<p>备注：$value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;">审核： $value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校对： $value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;化验员： $value</p>
+</ylt.for>    
+<script>
+    
+    window.print();
+	</script>
+</body>
+
+</html>
+
+
+
+

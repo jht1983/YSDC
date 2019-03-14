@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>主界面</title>
+<style>
+    	.Ttable,
+			.Ttable tr th,
+			.Ttable tr td {
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-right: 1px solid #000;
+				border-left: 1px solid #000;
+				text-align:center;
+			}
+			.Ttable {
+				width:100%;
+				min-height: 25px;
+				line-height: 25px;
+				border-collapse: collapse;
+			}
+			.radioW{
+			    width: 20px;height: 20px;
+			}
+</style>
+</head>
+
+<body>
+    <table class="Ttable">
+        <tr>
+            <th>
+                350MW机组水处理运行日志
+            </th>
+        </tr>
+    </table>
+    <ylt.for dataId="1509586596030">
+        <table class="Ttable">
+            <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+		    <col width='10%'/>
+            <tr>
+               <td>日期： </td>
+               <td>$value </td>
+               <td>星期:</td>
+               <td>$value </td>
+               <td>班次： </td>
+               <td>$value </td>
+               <td>值别： </td>
+               <td>$value </td>
+               <td>天气： </td>
+               <td>$value </td>
+            </tr>
+        </table>
+
+    </ylt.for>
+    <table class="Ttable" id="SBYXFS">
+       
+    </table>
+    <div id="ppap" style="width:100%">
+		
+	</div>
+	<table width="100%" class="Ttable">
+
+		<col width='20%'/>
+		<col width='20%'/>
+		<col width='60%'/>
+		<tr>
+			<th colspan="3">
+				记事
+			</th>
+		</tr>
+		<tr>
+			<td colspan="">
+				时间
+			</td>
+			<td>
+				类别
+			</td>
+			<td>
+				内容
+			</td>
+		</tr>
+        <ylt.for dataId="1509498331920">
+            <tr>
+			<td >
+				$value
+			</td>
+			<td>
+				$value
+			</td>
+			<td style="word-wrap:break-word; word-break:break-all;">
+				$value
+			</td>
+		</tr>
+        </ylt.for>
+	</table>
+</body>
+<script>
+<ylt.v message="SBYXFS">
+    var SBYXFS="2";
+$value
+    var SBYXFS="$value";
+</ylt.v>
+    var SBYXFSElement = document.getElementById('SBYXFS');
+    var SBYXFSStare="<td>设备名称 </td><td>运行 </td><td>备用 </td><td>检修 </td>";
+    /*window.print();*/
+    var SBYXFSValue="";
+</script>
+<script>
+        var index = 0;
+		var bl = SBYXFS; /*一组几个*/
+		var indexName=1;/*一行几组*/
+    	var insertHtml="";
+        var S_ID="$value";
+        var S_SBMC="$value";
+        var P="$value";
+        var N="$value";
+        var X="$value";
+            for(var i =0;i<SBYXFS;i++){
+        SBYXFSValue+="<col width='"+100*(0.4/bl)+"%' /><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/>";
+    }
+    for(var i =0;i<SBYXFS;i++){
+        SBYXFSValue+=SBYXFSStare;
+    }
+    SBYXFSElement.innerHTML="<tr>"+SBYXFSValue+"</tr>";
+    <ylt.for dataId="1509498346632">
+            S_ID="$value";
+        	S_SBMC="$value";
+        	P="$value";
+        	N="$value";
+        	X="$value";
+			if(S_ID.length<4){
+				if(i!=0){
+					insertHtml+="</table>";
+				}
+				insertHtml+="<table class='Ttable'  style='float: left;width:"+100/indexName+"%'>";
+				for(var z=0;z<bl;z++){
+					insertHtml+="<col width='"+100*(0.4/bl)+"%' /><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/><col width='"+100*(0.2/bl)+"%'/>";
+				}
+				insertHtml+="<tr ><td colspan='"+4*bl+"'>"+S_SBMC+"</td></tr><tr>";
+			}else{
+				if(index < bl) {
+					insertHtml += "<td>"+S_SBMC+" </td><td>"+N+" </td><td>"+P+" </td><td>"+X+" </td>";
+					index++;
+				} else {
+					insertHtml += "</tr>";
+					index = 0;
+				}
+			}
+	
+		</ylt.for>
+        document.getElementById("ppap").innerHTML=insertHtml;
+        
+        window.print();
+    
+</script>
+</html>
+    

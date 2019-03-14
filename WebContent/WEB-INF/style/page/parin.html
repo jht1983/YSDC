@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,html{
+			    width:100%;
+				height: 100%;
+				
+			}
+		</style>
+	</head>
+	<body>
+	    <div>
+	        <select onchange="toClick('',this.value);">
+	            <option value='001001'>榆神</option>
+	            <option value='001017'>横山</option>
+	       </select>
+	   </div>
+			<iframe id="table" src ="" width="100%" height="100%"></iframe>
+		<script>
+			function toClick(_strRepCode,_strBranchId){
+				document.getElementById('table').src = "RepView?srepcode="+'1541745842159'+"&bmid="+_strBranchId;
+			}
+		</script>
+		
+		
+	</body>
+</html>

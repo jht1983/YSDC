@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+<meta name="renderer" content="webkit">
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>首页</title>
+<link href="res/css/sip_new_home.css?v=2.3" rel="stylesheet" type="text/css">
+<link href="res/css/bootstrap.min.css?v=2.3" rel="stylesheet" type="text/css" />
+<link href="res/css/font-awesome.min.css?v=2.3" rel="stylesheet"/>
+<link href="res/css/style.css?v=2.3" rel="stylesheet" type="text/css" />
+<script src="res/js/jquery.js?v=2.3" type="text/javascript"></script>
+<script src="echarts.min.js?v=2.3"></script>
+<script src="res/js/bootstrap.min.js?v=2.3" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {
+	var navLi=$(".menu .nav li");
+	navLi.mouseover(function () {
+		$(this).find("a").addClass("current");
+		$(this).find('.trig').show();
+		$(this).find(".box").stop().slideDown(200);
+	});
+	navLi.mouseleave(function(){
+		$(this).find("a").removeClass("current");
+		$(this).find('.trig').hide();
+		$(this).find(".box").stop().slideUp(200);
+	});
+})
+</script>
+
+</head>
+<body>	
+
+<div class="main">
+	<!--数据  开始-->
+	<div class="sy-number">
+		<ul>
+			<li onclick="modal_todo_show()">
+				<div class="left-number">
+					<img src="res/images/dbsx-icon.png">
+					<p>待办事项</p>
+				</div>
+				<div class="right-number">
+					<p>
+					<ylt.for dataId="1525521665172">
+                        <span class="blue">$value</span>
+                    </ylt.for>
+					
+					项</p>
+				</div>
+			</li>
+			<li>
+				<div class="left-number">
+					<img src="res/images/aqsc-icon.png">
+					<p>安全生产</p>
+				</div>
+				<div class="right-number">
+					<p><span class="purple">
+					    <ylt.for dataId="1534479850565">
+					        $value
+					    </ylt.for>
+					    
+					</span>天</p>
+				</div>
+			</li>
+			<li>
+				<div class="left-number">
+					<img src="res/images/jhfd-icon.png">
+					<p>计划发电</p>
+				</div>
+				<div class="right-number">
+				    
+					<p><span class="dark-blue">
+					    <ylt.for dataId="1534479080167" param="bmid=001001">
+					        $value
+					        </ylt.for>
+				    </span>万Kwh</p>
+				</div>
+			</li>
+			<li>
+				<div class="left-number">
+					<img src="res/images/sjfd-icon.png">
+					<p>实际发电</p>
+				</div>
+				<div class="right-number">
+					<p><span id="realTime"  class="green">989</span>万Kwh</p>
+				</div>
+			</li>
+			<li class="last" onclick="modal_fun_show()">
+				<div class="left-number" >
+					<img src="res/images/cygn-icon.png">
+					<p>常用功能</p>
+				</div>
+				<div class="right-number">
+				    
+				    
+					<p>
+					    <ylt.for dataId="1525521748766">
+                    <span class="blue">$value</span>
+                </ylt.for>
+					    
+					    
+					    项</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--数据  结束-->
+	<div class="main-top">
+		<div class="dbsx">
+			<div class="title">
+				<h1>待办事项</h1>
+				<a href="#" onclick="modal_todo_show()">更多>></a>
+			</div>
+			<div class="dbsx-table" style="min-height:263px">
+				<table class="table table-bordered table-striped">
+	  				<tr>
+	  					<th>流程内容</th>
+	  					<th>审核人</th>
+	  					<th>时间</th>
+	  				</tr>
+	  				
+	  				<ylt.for dataId="1502958872220">
+	  				<tr>
+	  					<td onclick="sp('$value&$value&$value&$value&$value&$value&$value&$value&$value');" >事件:$value,内容:$value</td>
+	  					<td style="text-align: center;">$value</td>
+	  					<td style="text-align: center;">$value</td>
+	  				</tr>
+	  				</ylt.for>
+
+				</table>
+			</div>	
+		</div>
+		<div class="gstp">
+			<div class="title">
+				<h1>公司图片</h1>
+				<a href="#" onclick="doViewMenuUrl('View?SPAGECODE=1526375783450&NO_VIEWBTTN=0')">更多>></a>
+				
+			</div>
+			<div class="gstp-img">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					  </ol>
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" role="listbox">
+					      
+					      
+					    <ylt.for dataId="1526437212596">
+                            <div class="item">
+    					      <img src="upload/$value" class="center-block img-responsive" alt="...">
+    					      <div class="carousel-caption">
+    					        $value
+    					      </div>
+    					    </div>
+                        </ylt.for>
+					    
+					  </div>
+					  <script>
+					      var tiid = document.getElementsByClassName('item');
+					      if(tiid.length>0){
+					          tiid[0].setAttribute("class","item active")
+					      }
+					  </script>
+					</div>	
+			</div>
+		</div>
+	</div>
+	<div class="main-middle">
+		<div class="news">
+			<ul class="nav nav-tabs" role="tablist">
+    			<li role="presentation" class="active"><a href="#xwdt" aria-controls="home" onclick="document.getElementById('xw').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152758149395310008&type=xwdt&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">新闻动态</a></li>
+    			<li role="presentation"><a href="#gstb" aria-controls="profile" role="tab" onclick="document.getElementById('xw').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152758149395310008&type=gstb&NO_VIEWBTTN=0\')')" data-toggle="tab">公司通报</a></li>
+                <li role="presentation"><a href="#jcdt" aria-controls="profile" role="tab" onclick="document.getElementById('xw').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152758149395310008&type=jcdt&NO_VIEWBTTN=0\')')"  data-toggle="tab">基层动态</a></li>
+    		</ul>
+    		<div class="more">
+    			<a id="xw" onclick="doViewMenuUrl('View?SPAGECODE=152758149395310008&type=xwdt&NO_VIEWBTTN=0')" href="#">更多>></a>
+    		</div>
+    		<div class="clearfix"></div>
+		   	<div class="tab-content">
+		    	<div role="tabpanel" class="tab-pane active" id="xwdt">
+		    		<ul>
+		    		    <ylt.for dataId="1527584221990" param="bmid=001001&type=xwdt">
+		    			<li>
+		    				<a href="news_show.v?S_ID=$value">
+		    					<p>$value</p>
+		    					<span style="    float: none;">$value</span>
+		    					<span arg1="">$value</span>
+		    				</a>
+		    			</li>
+		    	
+		                </ylt.for>
+		    		</ul>
+		    	</div>
+		    	<div role="tabpanel" class="tab-pane" id="gstb">
+		    		<ul>
+		    		       <ylt.for dataId="1527584221990" param="bmid=001001&type=gstb">
+		    			<li>
+		    				<a href="news_show.v?S_ID=$value">
+		    					<p>$value</p>
+		    					<span style="    float: none;">$value</span>
+		    					<span arg1="">$value</span>
+		    				</a>
+		    			</li>
+		    			</ylt.for>
+		 
+		    		</ul>
+		    	</div>
+
+                        <div role="tabpanel" class="tab-pane" id="jcdt">
+		    		<ul>
+		    			    <ylt.for dataId="1527584221990" param="bmid=001001&type=jcdt">
+		    			<li>
+		    				<a href="news_show.v?S_ID=$value">
+		    					<p>$value</p>
+		    					<span style="    float: none;">$value</span>
+		    					<span arg1="">$value</span>
+		    				</a>
+		    			</li>
+		    			</ylt.for>
+		 
+		    		</ul>
+		    	</div>
+		  </div>
+		</div>
+		<div class="flfg">
+			<ul class="nav nav-tabs" role="tablist">
+    			<li role="presentation" class="active"><a href="#flfg" aria-controls="home" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">法律法规</a></li>
+    			<li role="presentation"><a href="#gszd" aria-controls="profile" role="tab" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gszd&NO_VIEWBTTN=0\')')" data-toggle="tab">公司制度</a></li>
+                        <li role="presentation"><a href="#gslh" aria-controls="profile" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gslh&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">公司例会</a></li> 
+
+    		</ul>
+    		<div class="more">
+    			<a id="fl" onclick="doViewMenuUrl('View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0')" href="#">更多>></a>
+    		</div>
+    		<div class="clearfix"></div>
+		   	<div class="tab-content">
+		    	<div role="tabpanel" class="tab-pane active" id="flfg">
+		    		<ul>
+		    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=flfg">
+    		    			<li>
+    		    				<p>$value </p>
+    		    				<a href="upload/$value" download="$value">下载</a>
+    		    				<span>$value</span>
+    		    			</li>
+		    		    </ylt.for>
+		    		</ul>
+		    	</div>
+		    	<div role="tabpanel" class="tab-pane" id="gszd">
+		    		<ul>
+		    		     <ylt.for dataId="1528769841860" param="bmid=001001&stype=gszd">
+		    			<li>
+		    				<p>$value </p>
+		    				<a href="upload/$value" download="$value">下载</a>
+		    				<span>$value</span>
+		    			</li>
+		    			 </ylt.for>
+		    		</ul>
+		    	</div>
+                        <div role="tabpanel" class="tab-pane" id="gslh">
+		    		<ul>
+		    			<ylt.for dataId="1528769841860" param="bmid=001001&stype=gslh">
+    		    			<li>
+    		    				<p>$value </p>
+    		    				<a href="upload/$value" download="$value">下载</a>
+    		    				<span>$value</span>
+    		    			</li>
+		    		    </ylt.for>
+		    		</ul>
+		    	</div>
+		  </div>
+		</div>
+	</div>
+	<div class="main-bottom">
+		<div class="zb-charts">
+			<ul class="nav nav-tabs" role="tablist">
+    			<li role="presentation" class="active"><a href="#pfzb" aria-controls="home" role="tab" data-toggle="tab">排放指标（折算前）</a></li>
+    			<li role="presentation"><a href="#yggl" aria-controls="profile" onclick="document.getElementById('yggl').style.display='';" role="tab" data-toggle="tab">有功功率</a></li>
+    		</ul>
+    		<div class="more">
+    			<a href="#" style="display:none">更多>></a>
+    		</div>
+    		<div class="clearfix"></div>
+		   	<div class="tab-content" style="height:300px;">
+		   	    
+		    	<div role="tabpanel" class="tab-pane active" id="pfzb" style="min-height:300px;height:300px;    width: 100%;">
+		    	<ylt.fun fun="getChart_1352202426215655555"/>
+                        <script>
+                            myChart.setOption({
+                            	xAxis: {
+                            	     type: 'category',
+                                    boundaryGap: false,
+                            		}
+                            });
+                        </script>
+		    	</div>
+		    	
+		    	
+		    	
+		    	
+		    	<div role="tabpanel" class="tab-pane active" id="yggl"  style="min-height:300px;height:300px;    width: 100%; ">
+		    	
+                        <ylt.fun fun="getChart_1202426215655555641"/>
+                        <script>
+                            myChart.setOption({
+                            	xAxis: {
+                            	     type: 'category',
+                                    boundaryGap: false,
+                            		}
+                            });
+                        </script>
+                        
+		    	</div>
+		  </div>
+		</div>
+		<div class="aqjb">
+			<div class="title">
+				<h1>安全简报</h1>
+				<a href="#" onclick="doViewMenuUrl('View?SPAGECODE=152878766215410508&NO_VIEWBTTN=0')" >更多>></a>
+			</div>
+			<ul>
+			     <ylt.for dataId="1528787050778" param="bmid=001001&stype=aqjb">
+				<li>
+					<span>$value年</span>
+					<p>第$value期    <a href="upload/$value" download="$value">$value</a></p>
+				</li>
+			    </ylt.for>
+			</ul>
+		</div>
+
+	</div>
+</div>
+<!-- 常用功能 -->
+<div class="md-modal md-effect-1" id="fun" style="height:100%;top:50%">
+    <table class="md-content" cellpadding="0" border="0" cellspacing="0" style="width:100%;height:100%">
+        <tr style="height:60px;line-height:60px;">
+            <td>
+                    
+                
+                <h3 style="border-bottom: 2px solid rgb(233, 233, 233);display: block;font-size: 1.17em;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;" >常用功能</h3>
+            </td>
+        </tr>
+        <tr class="md-fun-content" valign="top"  align="left">
+            <td style="border-bottom: 2px solid rgb(233, 233, 233);">
+                <ylt.for dataId="1514365555773">
+                    
+                <div class="menubttn" arg1="$value" arg2="$value" onclick="doViewMenuUrl('$value');">
+                    <table width="100%" height="100%">
+                        <tbody>
+                        <tr>
+                            <td align="center" class="menuico" valign="bottom"><img class="menucentico"
+                                                                                    src="images/ico/xmgl.png"
+                                                                                    dbsrc="$value"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="menutext" valign="middle">$value</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ylt.for>
+            </td>
+        </tr>
+        <tr class="md-bttn">
+            <td class="md-bttn">
+                <input type="button" id="md-modal-fun" style="line-height: 35px;"  value="常用功能"/>
+                <input type="button" id="md-modal-close" style="line-height: 35px;" value="关闭"/>
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<!-- 待办事项 -->
+<div class="md-modal md-effect-1" id="todo" style="height:100%;top:50%">
+    
+    
+    <table class="md-content" cellpadding="0" border="0" cellspacing="0" style="width:100%;height:100%">
+        <tr style="height:60px;line-height:60px;">
+            <td>
+                <h3 style="border-bottom: 2px solid rgb(233, 233, 233);display: block;font-size: 1.17em;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;">待办事项</h3>
+            </td>
+        </tr>
+        <tr class="md-fun-content" valign="top"  align="left">
+            <td style="border-bottom: 2px solid rgb(233, 233, 233);">
+                <div class="box_left_inter_contert" id="parentc" style="width: 99%;height: 100%;overflow: auto;">
+               <table class="conterTable" cellpadding="0" border="0" cellspacing="0">
+                    <colgroup>
+                        <col width="480px">
+                        <col width="120px">
+                        <col width="">
+                    </colgroup>
+                    <tr>
+                        <th>流程内容</th>
+                        <th>审核人</th>
+                        <th>时间</th>
+                    </tr>
+                </table>
+
+                <ylt.for dataId="1525853802311">
+                    <table class="conterTable conterTableTd"  cellpadding="0" border="0" cellspacing="0">
+                        <colgroup>
+                            <col width="480px">
+                            <col width="120px">
+                            <col width="">
+                        </colgroup>
+
+                        <tr>
+                            
+    <!-- 通过参数个数判断跳转页面，审批还是编辑 -->
+                                <td onclick="sp('$value&$value&$value&$value&$value&$value&$value&$value&$value');"
+                                    style="text-align: left;text-indent:2em">事件:$value,内容:$value
+                                </td>
+                                <td>$value</td>
+                                <td>$value</td>
+                        </tr>
+
+                    </table>
+                </ylt.for>
+            </div>
+                
+            </td>
+        </tr>
+        <tr class="md-bttn">
+            <td class="md-bttn">
+                 <input type="button" id="md-todo-close" style="line-height: 35px;" value="关闭"/>
+            </td>
+        </tr>
+    </table>
+    
+
+    
+</div>
+
+
+<script>
+
+    document.getElementById('parentc').style.height=(document.getElementById('todo').offsetHeight-130)+"px";
+    
+    
+    document.getElementById('md-modal-fun').onclick=function () {
+        doViewMenuUrl('View?SPAGECODE=1509178831204')
+    };
+    document.getElementById('md-modal-close').onclick= function () {
+        document.getElementById('fun').setAttribute("class", "md-modal md-effect-1");
+        document.getElementById('fun').style.visibility = "hidden";
+
+    };
+
+    function modal_fun_show() {
+        document.getElementById('fun').setAttribute("class", "md-modal md-effect-1 md-show");
+        document.getElementById('fun').style.visibility = "visible";
+    };
+
+    function modal_todo_show(){
+        document.getElementById('todo').setAttribute("class", "md-modal md-effect-1 md-show");
+        document.getElementById('todo').style.visibility = "visible";
+    };
+    
+    
+    document.getElementById('md-todo-close').click = function () {
+        document.getElementById('todo').setAttribute("class", "md-modal md-effect-1");
+        document.getElementById('todo').style.visibility = "hidden";
+
+    };
+       document.getElementById('md-todo-close').addEventListener("click", function () {
+        document.getElementById('todo').setAttribute("class", "md-modal md-effect-1");
+        document.getElementById('todo').style.visibility = "hidden";
+
+    });
+    function doViewMenuUrl(_strUrl){parent.document.getElementById("mainhomeframe").src=_strUrl;parent.document.getElementById("secmenuitemcontainer").style.display="none";}
+     
+    window.onload = function () {
+    setInterval(function () {
+        window.location.reload()
+          }, 600000)
+    }
+</script>
+
+<!---SISDATE--->
+<script>
+function getAjaxActive(){
+	var xmlHttp;
+ if (window.ActiveXObject) { 
+  xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+ } 
+ else if (window.XMLHttpRequest) { 
+  xmlHttp = new XMLHttpRequest();
+ }
+ return xmlHttp;
+}
+function getTx(param,aStrUrl){
+		var xml=getAjaxActive();
+		xml.open("POST",aStrUrl,false);
+		xml.setRequestHeader("content-length",param.length);  
+		xml.setRequestHeader("content-type","application/x-www-form-urlencoded");  
+		xml.setRequestHeader("charset", "UTF-8");
+		xml.send(param);  
+		var res = xml.responseText;
+		return res;
+	}
+	
+    var realTime = document.getElementById("realTime");
+    var getSISDate = null;
+    var locat = window.location.pathname;
+    function subGetTx(_subStr,_vari){
+        var z = _subStr;
+        _vari ="var "+_vari+"='";
+        z=z.substring(z.indexOf(_vari)+_vari.length);
+        return z.substring(0,z.indexOf("';"));
+    }
+    if(locat.indexOf("/sip")==-1&&locat.indexOf("/hsdc")==-1){
+      
+        getSisDateEvl();
+        getSISDate = setInterval(getSisDateEvl,10000);
+     
+    }
+
+    function getSisDateEvl(){
+        var Trvalue = subGetTx(getTx("disType=REALTIME","sis_date_ajax.v"),"eleSISData");
+        realTime.title=Trvalue;
+        realTime.innerHTML= parseFloat(Trvalue).toFixed(1);
+    }
+
+  
+     function sp(id) {
+        var arr = id.split("&");
+        if(arr[8]=="6S"){
+
+            parent.miniWin('单据', '', 'View?sourcePage=home&SPAGECODE='+arr[1]+'&sys_bed=true&S_ID='+arr[2]+'&bmid='+arr[3], 2000, 1800, '', '');
+    
+        }else{
+           parent.miniWin('审核', '', 'flow-box.v?home=home&bmid=' + arr[3] + '&s_id=' + arr[2] + '&sys_flow_run_id=' + arr[5] + '&s_flow_id=' + arr[4] + '&flow_ver=' + arr[6] + '&node_code=' + arr[7] + '&spagecode=' + arr[1], 2000, 1800, '', '');
+     
+        }
+        
+        
+        
+    }
+</script>
+
+</body>
+</html>
