@@ -16,13 +16,13 @@ import java.util.Date;
 public class TJSisData {
 // 	static String[] dayCondCode = { "rb1_fdl", "rb1_jhdl", "rb1_hbfc", "rb1_hbso", "rb1_hbno", "rb2_fdl", "rb2_jhdl",
 // 			"rb2_hbfc", "rb2_hbso", "rb2_hbno","DCS1:DUP9:10CRC01AO03","DCS2:DUP9:20CRC01AO03" };
-// 	static String[] dayCondName = { "#1 »ú×éÈÕ·¢µçÁ¿ ", "#1 »ú×éÈÕ¼Æ»®µçÁ¿ ", "#1 »ú·Û³¾Å¨¶ÈÈÕÆ½¾ù", "#1 »ú SO2 ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ",
-// 			"#1 »ú NOX ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ", "#2 »ú×éÈÕ·¢µçÁ¿", "#2 »ú×éÈÕ¼Æ»®µçÁ¿ ", "#2 »ú·Û³¾Å¨¶ÈÈÕÆ½¾ù ", "#2 »ú SO2 ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ", "#2 »ú NOX ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ", "#1 ", "#2 " };
+// 	static String[] dayCondName = { "#1 æœºç»„æ—¥å‘ç”µé‡ ", "#1 æœºç»„æ—¥è®¡åˆ’ç”µé‡ ", "#1 æœºç²‰å°˜æµ“åº¦æ—¥å¹³å‡", "#1 æœº SO2 æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ",
+// 			"#1 æœº NOX æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ", "#2 æœºç»„æ—¥å‘ç”µé‡", "#2 æœºç»„æ—¥è®¡åˆ’ç”µé‡ ", "#2 æœºç²‰å°˜æµ“åº¦æ—¥å¹³å‡ ", "#2 æœº SO2 æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ", "#2 æœº NOX æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ", "#1 ", "#2 " };
 
     static String[] dayCondCode = { "rb1_fdl", "rb1_jhdl", "rb1_hbfc", "rb1_hbso", "rb1_hbno", "rb2_fdl", "rb2_jhdl",
 			"rb2_hbfc", "rb2_hbso", "rb2_hbno","rb1_yxsj","rb2_yxsj"};
-	static String[] dayCondName = { "#1 »ú×éÈÕ·¢µçÁ¿ ", "#1 »ú×éÈÕ¼Æ»®µçÁ¿ ", "#1 »ú·Û³¾Å¨¶ÈÈÕÆ½¾ù", "#1 »ú SO2 ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ",
-			"#1 »ú NOX ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ", "#2 »ú×éÈÕ·¢µçÁ¿", "#2 »ú×éÈÕ¼Æ»®µçÁ¿ ", "#2 »ú·Û³¾Å¨¶ÈÈÕÆ½¾ù ", "#2 »ú SO2 ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ", "#2 »ú NOX ÅÅ·ÅÅ¨¶ÈÈÕÆ½¾ù ","rb1_yxsj","rb2_yxsj"  };
+	static String[] dayCondName = { "#1 æœºç»„æ—¥å‘ç”µé‡ ", "#1 æœºç»„æ—¥è®¡åˆ’ç”µé‡ ", "#1 æœºç²‰å°˜æµ“åº¦æ—¥å¹³å‡", "#1 æœº SO2 æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ",
+			"#1 æœº NOX æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ", "#2 æœºç»„æ—¥å‘ç”µé‡", "#2 æœºç»„æ—¥è®¡åˆ’ç”µé‡ ", "#2 æœºç²‰å°˜æµ“åº¦æ—¥å¹³å‡ ", "#2 æœº SO2 æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ", "#2 æœº NOX æŽ’æ”¾æµ“åº¦æ—¥å¹³å‡ ","rb1_yxsj","rb2_yxsj"  };
 
 
 

@@ -51,14 +51,14 @@ try {
                         	MantraLog.WriteProgress(MantraLog.LOG_PROGRESS,
                     						"[:019]->SisDataTiming->isRun:");
                     
-                    		tool = new MantraUtil(); // ¹¤¾ßÀà
-                    		String strNowDate = sdf_ymd.format(new Date()); // µ±Ç°Ê±¼ä
-                    		if("".equals(_getSisDate)) {  //³õÊ¼»¯
+                    		tool = new MantraUtil(); // å·¥å…·ç±»
+                    		String strNowDate = sdf_ymd.format(new Date()); // å½“å‰æ—¶é—´
+                    		if("".equals(_getSisDate)) {  //åˆå§‹åŒ–
                     			_getSisDate=strNowDate;
-                    		}else if(strNowDate.equals(_getSisDate)){  //ÏàµÈ
+                    		}else if(strNowDate.equals(_getSisDate)){  //ç›¸ç­‰
 
-                    		}else {	//²»ÏàµÈ
-                    			int dataRow = tool.getDateCont("t_sis_date_day", "DATETIME='" + _getSisDate + "'"); // ÅĞ¶ÏÊı¾İ¿âÊÇ·ñÓĞµ±ÌìµÃÊı¾İ
+                    		}else {	//ä¸ç›¸ç­‰
+                    			int dataRow = tool.getDateCont("t_sis_date_day", "DATETIME='" + _getSisDate + "'"); // åˆ¤æ–­æ•°æ®åº“æ˜¯å¦æœ‰å½“å¤©å¾—æ•°æ®
                     			if (dataRow == 0) {
                     				isRun = true;
                     			}
@@ -67,7 +67,7 @@ try {
                 		
                             if(isRun==true){
                                 TJSisData sisTool = new TJSisData();
-                    		    boolean retBool = sisTool.obtainData(_getSisDate); // ´¦Àíµ±ÌìÈÕÆÚÖĞµÃÄÚÈİ
+                    		    boolean retBool = sisTool.obtainData(_getSisDate); // å¤„ç†å½“å¤©æ—¥æœŸä¸­å¾—å†…å®¹
                     		    if (retBool = true) {
                     			    _getSisDate = sdf_ymd.format(new Date());
                     	    	}
@@ -81,28 +81,28 @@ try {
 			MantraLog.fileCreateAndWrite(e);
 		}
 		try {
-//-----------»ñÈ¡SISÊı¾İ	
+//-----------è·å–SISæ•°æ®	
         
 		   
   
 		    
-//--------¶¨Ê±ÈÎÎñ
-			if (vecGJStatus.size() != 0) { // ·Ç¿ÕÔËĞĞ
+//--------å®šæ—¶ä»»åŠ¡
+			if (vecGJStatus.size() != 0) { // éç©ºè¿è¡Œ
 				HashMap<String, String> runMap = null;
   
-				for (int i = 0, j = vecGJStatus.size(); i < j; i++) { // ÔËĞĞÌõÊı
+				for (int i = 0, j = vecGJStatus.size(); i < j; i++) { // è¿è¡Œæ¡æ•°
 				
 					runMap = vecGJStatus.get(i);
-					String SYS_LASTDATE = runMap.get("SYS_LASTDATE"); // ÉÏÒ»ÔËĞĞÊ±¼ä
-					String SYS_NEXTDATE = runMap.get("SYS_NEXTDATE"); // ÏÂÒ»ÔËĞĞÊ±¼ä
-					String SYS_TYPE = runMap.get("SYS_TYPE"); // Àà±ğ
-					String SYS_START = runMap.get("SYS_START"); // ¿ªÊ¼Ê±¼ä
-					String SYS_AHEADDay = runMap.get("SYS_AHEADDay"); // ÌáÇ°ÌìÊı
-					String cycles = runMap.get("cycles"); // ÌáÇ°ÌìÊı
-					String S_QYZT = runMap.get("S_QYZT"); // ÆôÓÃ×´Ì¬
+					String SYS_LASTDATE = runMap.get("SYS_LASTDATE"); // ä¸Šä¸€è¿è¡Œæ—¶é—´
+					String SYS_NEXTDATE = runMap.get("SYS_NEXTDATE"); // ä¸‹ä¸€è¿è¡Œæ—¶é—´
+					String SYS_TYPE = runMap.get("SYS_TYPE"); // ç±»åˆ«
+					String SYS_START = runMap.get("SYS_START"); // å¼€å§‹æ—¶é—´
+					String SYS_AHEADDay = runMap.get("SYS_AHEADDay"); // æå‰å¤©æ•°
+					String cycles = runMap.get("cycles"); // æå‰å¤©æ•°
+					String S_QYZT = runMap.get("S_QYZT"); // å¯ç”¨çŠ¶æ€
 					
 					// 01_YQY is on, 02_TY is off
-					if ("01_YQY".equals(S_QYZT) && timTool.runTimeCheck(SYS_NEXTDATE, SYS_AHEADDay)) { // Èç¹ûµ±ÌìÊ±¼ä´óÓÚÔËĞĞÊ±¼ä
+					if ("01_YQY".equals(S_QYZT) && timTool.runTimeCheck(SYS_NEXTDATE, SYS_AHEADDay)) { // å¦‚æœå½“å¤©æ—¶é—´å¤§äºè¿è¡Œæ—¶é—´
 						String[] cdit = timTool.nextTimeCompute(SYS_NEXTDATE, SYS_TYPE, cycles);
 
 						runMap.put("SYS_LASTDATE", cdit[0]);
