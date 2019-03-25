@@ -51,7 +51,7 @@ public class EventCl extends Event {
 	static String _getSisDate = "";
 
 	static boolean isRun = false;
-	public static boolean isStartSis = false; //set to true after deploy into PRO
+	public static boolean isStartSis = true; //set to true after deploy into PRO
 	
 	private int timer = 0;
 	// --SIS Data--end
