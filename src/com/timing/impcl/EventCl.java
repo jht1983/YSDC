@@ -117,7 +117,7 @@ public class EventCl extends Event {
 							"," + TAG_2_NOX +
 							"," + TAG_1_GL +
 							"," + TAG_2_GL);
-//					MantraLog.WriteProgress(MantraLog.LOG_PROGRESS, "EventCl->isRun:SIS Data: " + result);
+					MantraLog.WriteProgress(MantraLog.LOG_PROGRESS, "EventCl->isRun:SIS Data: " + result);
 					//tag1,实时值 1,时间 1,描述 1,单位 1,|tag2,实时值 2,时间 2,描述 2,单位 2, 
 					if (StringUtils.isNotEmpty(result)) {
 						String[] data = result.split("\\|");
