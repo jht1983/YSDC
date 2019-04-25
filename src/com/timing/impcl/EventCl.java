@@ -109,7 +109,8 @@ public class EventCl extends Event {
 					httpCon httpConnection = new httpCon();
 					String result = httpConnection.sendGet(
 							"http://172.16.100.11/View/GetSnapshot.aspx", 
-							"first=0&queryField=" + TAG_1_FC +
+//							"first=0&queryField=" + TAG_1_FC +
+							"queryChart=GetMis&queryField=" + TAG_1_FC +
 							"," + TAG_1_SO2 +
 							"," + TAG_1_NOX +
 							"," + TAG_2_FC +
