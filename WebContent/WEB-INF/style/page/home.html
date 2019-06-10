@@ -216,7 +216,7 @@ $(function () {
 		    		</ul>
 		    	</div>
 
-                        <div role="tabpanel" class="tab-pane" id="jcdt">
+                <div role="tabpanel" class="tab-pane" id="jcdt">
 		    		<ul>
 		    			    <ylt.for dataId="1527584221990" param="bmid=001001&type=jcdt">
 		    			<li>
@@ -230,58 +230,39 @@ $(function () {
 		 
 		    		</ul>
 		    	</div>
-		  </div>
+			</div>
 		</div>
-		<div class="flfg">
-			<ul class="nav nav-tabs" role="tablist">
-    			<li role="presentation" class="active"><a href="#flfg" aria-controls="home" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">法律法规</a></li>
-    			<li role="presentation"><a href="#gszd" aria-controls="profile" role="tab" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gszd&NO_VIEWBTTN=0\')')" data-toggle="tab">公司制度</a></li>
-                        <li role="presentation"><a href="#gslh" aria-controls="profile" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gslh&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">公司例会</a></li> 
-
-    		</ul>
-    		<div class="more">
-    			<a id="fl" onclick="doViewMenuUrl('View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0')" href="#">更多>></a>
-    		</div>
-    		<div class="clearfix"></div>
-		   	<div class="tab-content">
-		    	<div role="tabpanel" class="tab-pane active" id="flfg">
-		    		<ul>
-		    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=flfg">
-    		    			<li>
-    		    				<p>$value </p>
-    		    				<a href="upload/$value" download="$value">下载</a>
-    		    				<span>$value</span>
-    		    			</li>
-		    		    </ylt.for>
-		    		</ul>
-		    	</div>
-		    	<div role="tabpanel" class="tab-pane" id="gszd">
-		    		<ul>
-		    		     <ylt.for dataId="1528769841860" param="bmid=001001&stype=gszd">
-		    			<li>
-		    				<p>$value </p>
-		    				<a href="upload/$value" download="$value">下载</a>
-		    				<span>$value</span>
-		    			</li>
-		    			 </ylt.for>
-		    		</ul>
-		    	</div>
-                        <div role="tabpanel" class="tab-pane" id="gslh">
-		    		<ul>
-		    			<ylt.for dataId="1528769841860" param="bmid=001001&stype=gslh">
-    		    			<li>
-    		    				<p>$value </p>
-    		    				<a href="upload/$value" download="$value">下载</a>
-    		    				<span>$value</span>
-    		    			</li>
-		    		    </ylt.for>
-		    		</ul>
-		    	</div>
-		  </div>
+		<!-- 值班表 -->
+		<div>
+			<div class="zbb" style="width: 39%; margin-left: 1%; float: right;">
+				<ul class="nav nav-tabs" role="tablist" style="float: left;">
+	    			<li role="presentation" class="active"><a href="#zbb" aria-controls="home" onclick="document.getElementById('zb').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152758149395310008&type=xwdt&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">值班表</a></li>
+	    		</ul>
+	    		
+	    		
+	    		<div class="more">
+	    			<a id="zb" onclick="doViewMenuUrl('View?SPAGECODE=155971628481910439&stype=zbb&NO_VIEWBTTN=0')" href="#">更多>></a>
+	    		</div>
+	    		<div class="clearfix"></div>
+			   	<div class="tab-content">
+			    	<div role="tabpanel" class="tab-pane active" id="zbb">
+			    		<ul>
+			    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=zbb">
+	    		    			<li>
+	    		    				<p style="padding-left: 20px; width: 70%;text-overflow: ellipsis;white-space: nowrap; float: left;">$value </p>
+	    		    				<a href="upload/$value" download="$value" style="float: left;color: #5a75d8; text-decoration: underline; ">下载</a>
+	    		    				<span style="float: right;">$value</span>
+	    		    			</li>
+			    		    </ylt.for>
+			    		</ul>
+			    	</div>
+			    </div>
+			</div>
 		</div>
 	</div>
+	
 	<div class="main-bottom">
-		<div class="zb-charts">
+		<div class="zb-charts" style="overflow:hidden;">
 			<ul class="nav nav-tabs" role="tablist">
     			<li role="presentation" class="active"><a href="#pfzb" aria-controls="home" role="tab" data-toggle="tab">排放指标（折算前）</a></li>
     			<li role="presentation"><a href="#yggl" aria-controls="profile" onclick="document.getElementById('yggl').style.display='';" role="tab" data-toggle="tab">有功功率</a></li>
@@ -304,10 +285,8 @@ $(function () {
                         </script>
 		    	</div>
 		    	
-		    	
-		    	
-		    	
-		    	<div role="tabpanel" class="tab-pane active" id="yggl"  style="min-height:300px;height:300px;    width: 100%; ">
+	
+		    	<div role="tabpanel" class="tab-pane active" id="yggl"  style="min-height:300px;height:300px;width: 100%; ">
 		    	
                         <ylt.fun fun="getChart_1202426215655555641"/>
                         <script>
@@ -322,21 +301,71 @@ $(function () {
 		    	</div>
 		  </div>
 		</div>
-		<div class="aqjb">
-			<div class="title">
-				<h1>安全简报</h1>
-				<a href="#" onclick="doViewMenuUrl('View?SPAGECODE=152878766215410508&NO_VIEWBTTN=0')" >更多>></a>
+		
+		<div>
+			<!-- 法律法规 -->
+			<div class="flfg" style="height:132px;overflow: hidden;">
+				<ul class="nav nav-tabs" role="tablist">
+	    			<li role="presentation" class="active"><a href="#flfg" aria-controls="home" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">法律法规</a></li>
+	    			<li role="presentation"><a href="#gszd" aria-controls="profile" role="tab" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gszd&NO_VIEWBTTN=0\')')" data-toggle="tab">公司制度</a></li>
+	                <li role="presentation"><a href="#gslh" aria-controls="profile" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gslh&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">公司例会</a></li> 
+	
+	    		</ul>
+	    		<div class="more">
+	    			<a id="fl" onclick="doViewMenuUrl('View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0')" href="#">更多>></a>
+	    		</div>
+	    		<div class="clearfix"></div>
+			   	<div class="tab-content">
+			    	<div role="tabpanel" class="tab-pane active" id="flfg">
+			    		<ul>
+			    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=flfg">
+	    		    			<li>
+	    		    				<p style="overflow: hidden;">$value </p>
+	    		    				<a href="upload/$value" download="$value">下载</a>
+	    		    				<span>$value</span>
+	    		    			</li>
+			    		    </ylt.for>
+			    		</ul>
+			    	</div>
+			    	<div role="tabpanel" class="tab-pane" id="gszd">
+			    		<ul>
+			    		     <ylt.for dataId="1528769841860" param="bmid=001001&stype=gszd">
+			    			<li>
+			    				<p style="overflow: hidden;">$value </p>
+			    				<a href="upload/$value" download="$value">下载</a>
+			    				<span>$value</span>
+			    			</li>
+			    			 </ylt.for>
+			    		</ul>
+			    	</div>
+	                <div role="tabpanel" class="tab-pane" id="gslh">
+			    		<ul>
+			    			<ylt.for dataId="1528769841860" param="bmid=001001&stype=gslh">
+	    		    			<li>
+	    		    				<p style="overflow: hidden;">$value </p>
+	    		    				<a href="upload/$value" download="$value">下载</a>
+	    		    				<span>$value</span>
+	    		    			</li>
+			    		    </ylt.for>
+			    		</ul>
+			    	</div>
+				</div>
 			</div>
-			<ul>
-			     <ylt.for dataId="1528787050778" param="bmid=001001&stype=aqjb">
-				<li>
-					<span>$value年</span>
-					<p>第$value期    <a href="upload/$value" download="$value">$value</a></p>
-				</li>
-			    </ylt.for>
-			</ul>
+			<div class="aqjb" style="height:207px;overflow: hidden;">
+				<div class="title">
+					<h1>安全简报</h1>
+					<a href="#" onclick="doViewMenuUrl('View?SPAGECODE=152878766215410508&NO_VIEWBTTN=0')" >更多>></a>
+				</div>
+				<ul>
+				     <ylt.for dataId="1528787050778" param="bmid=001001&stype=aqjb">
+					<li>
+						<span>$value年</span>
+						<p>第$value期    <a href="upload/$value" download="$value">$value</a></p>
+					</li>
+				    </ylt.for>
+				</ul>
+			</div>
 		</div>
-
 	</div>
 </div>
 <!-- 常用功能 -->
