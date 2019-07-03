@@ -112,28 +112,45 @@ $(function () {
 	<!--数据  结束-->
 	<div class="main-top">
 		<div class="dbsx">
-			<div class="title">
-				<h1>待办事项</h1>
-				<a href="#" onclick="modal_todo_show()">更多>></a>
+				<ul class="nav nav-tabs" role="tablist" style="float: left;">
+	    			<li role="presentation" class="active"><a href="#dbsx" aria-controls="home" onclick="document.getElementById('db').setAttribute('onclick','modal_todo_show()')" role="tab" data-toggle="tab">待办事项</a></li>
+					<li role="presentation"><a href="#zbb" aria-controls="profile" onclick="document.getElementById('db').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=155971628481910439&stype=zbb&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">值班表</a></li>
+	    		</ul>
+	    		<div class="more">
+	    			<a id="db" onclick="modal_todo_show()" href="#">更多>></a>
+	    		</div>
+			<div class="clearfix"></div>
+			<div class="tab-content" style="padding:0px;">
+				<div id="dbsx" role="tabpanel" class="dbsx-table tab-pane active" style="min-height:263px">
+					<table class="table table-bordered table-striped">
+		  				<tr>
+		  					<th>流程内容</th>
+		  					<th>审核人</th>
+		  					<th>时间</th>
+		  				</tr>
+		  				
+		  				<ylt.for dataId="1502958872220">
+			  				<tr>
+			  					<td onclick="sp('$value&$value&$value&$value&$value&$value&$value&$value&$value');" >事件:$value,内容:$value</td>
+			  					<td style="text-align: center;">$value</td>
+			  					<td style="text-align: center;">$value</td>
+			  				</tr>
+		  				</ylt.for>
+	
+					</table>
+				</div>	
+				<div role="tabpanel" class="tab-pane" id="zbb" style="height:263px;">
+		    		<ul>
+		    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=zbb">
+    		    			<li style="height: 50px;line-height: 50px;">
+    		    				<p style="padding-left: 20px; width: 85%;text-overflow: ellipsis;white-space: nowrap; float: left;">$value </p>
+    		    				<a href="upload/$value" download="$value" style="float: left;color: #5a75d8; text-decoration: underline; ">下载</a>
+    		    				<span style="float: right;">$value</span>
+    		    			</li>
+		    		    </ylt.for>
+		    		</ul>
+		    	</div>
 			</div>
-			<div class="dbsx-table" style="min-height:263px">
-				<table class="table table-bordered table-striped">
-	  				<tr>
-	  					<th>流程内容</th>
-	  					<th>审核人</th>
-	  					<th>时间</th>
-	  				</tr>
-	  				
-	  				<ylt.for dataId="1502958872220">
-	  				<tr>
-	  					<td onclick="sp('$value&$value&$value&$value&$value&$value&$value&$value&$value');" >事件:$value,内容:$value</td>
-	  					<td style="text-align: center;">$value</td>
-	  					<td style="text-align: center;">$value</td>
-	  				</tr>
-	  				</ylt.for>
-
-				</table>
-			</div>	
 		</div>
 		<div class="gstp">
 			<div class="title">
@@ -232,33 +249,55 @@ $(function () {
 		    	</div>
 			</div>
 		</div>
-		<!-- 值班表 -->
-		<div>
-			<div class="zbb" style="width: 39%; margin-left: 1%; float: right;">
-				<ul class="nav nav-tabs" role="tablist" style="float: left;">
-	    			<li role="presentation" class="active"><a href="#zbb" aria-controls="home" onclick="document.getElementById('zb').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152758149395310008&type=xwdt&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">值班表</a></li>
-	    		</ul>
-	    		
-	    		
-	    		<div class="more">
-	    			<a id="zb" onclick="doViewMenuUrl('View?SPAGECODE=155971628481910439&stype=zbb&NO_VIEWBTTN=0')" href="#">更多>></a>
-	    		</div>
-	    		<div class="clearfix"></div>
-			   	<div class="tab-content">
-			    	<div role="tabpanel" class="tab-pane active" id="zbb">
-			    		<ul>
-			    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=zbb">
-	    		    			<li>
-	    		    				<p style="padding-left: 20px; width: 70%;text-overflow: ellipsis;white-space: nowrap; float: left;">$value </p>
-	    		    				<a href="upload/$value" download="$value" style="float: left;color: #5a75d8; text-decoration: underline; ">下载</a>
-	    		    				<span style="float: right;">$value</span>
-	    		    			</li>
-			    		    </ylt.for>
-			    		</ul>
-			    	</div>
-			    </div>
+		<!-- 法律法规 -->
+		<div class="flfg" style="overflow: hidden;">
+			<ul class="nav nav-tabs" role="tablist">
+    			<li role="presentation" class="active"><a href="#flfg" aria-controls="home" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">法律法规</a></li>
+    			<li role="presentation"><a href="#gszd" aria-controls="profile" role="tab" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gszd&NO_VIEWBTTN=0\')')" data-toggle="tab">公司制度</a></li>
+                <li role="presentation"><a href="#gslh" aria-controls="profile" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gslh&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">公司例会</a></li> 
+
+    		</ul>
+    		<div class="more">
+    			<a id="fl" onclick="doViewMenuUrl('View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0')" href="#">更多>></a>
+    		</div>
+    		<div class="clearfix"></div>
+		   	<div class="tab-content">
+		    	<div role="tabpanel" class="tab-pane active" id="flfg">
+		    		<ul>
+		    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=flfg">
+    		    			<li>
+    		    				<p style="overflow: hidden;">$value </p>
+    		    				<a href="upload/$value" download="$value">下载</a>
+    		    				<span>$value</span>
+    		    			</li>
+		    		    </ylt.for>
+		    		</ul>
+		    	</div>
+		    	<div role="tabpanel" class="tab-pane" id="gszd">
+		    		<ul>
+		    		     <ylt.for dataId="1528769841860" param="bmid=001001&stype=gszd">
+		    			<li>
+		    				<p style="overflow: hidden;">$value </p>
+		    				<a href="upload/$value" download="$value">下载</a>
+		    				<span>$value</span>
+		    			</li>
+		    			 </ylt.for>
+		    		</ul>
+		    	</div>
+                <div role="tabpanel" class="tab-pane" id="gslh">
+		    		<ul>
+		    			<ylt.for dataId="1528769841860" param="bmid=001001&stype=gslh">
+    		    			<li>
+    		    				<p style="overflow: hidden;">$value </p>
+    		    				<a href="upload/$value" download="$value">下载</a>
+    		    				<span>$value</span>
+    		    			</li>
+		    		    </ylt.for>
+		    		</ul>
+		    	</div>
 			</div>
 		</div>
+		
 	</div>
 	
 	<div class="main-bottom">
@@ -271,7 +310,7 @@ $(function () {
     			<a href="#" style="display:none">更多>></a>
     		</div>
     		<div class="clearfix"></div>
-		   	<div class="tab-content" style="height:300px;">
+		   	<div class="tab-content" style="height:318px;">
 		   	    
 		    	<div role="tabpanel" class="tab-pane active" id="pfzb" style="min-height:300px;height:300px;    width: 100%;">
 		    	<ylt.fun fun="getChart_1352202426215655555"/>
@@ -303,55 +342,8 @@ $(function () {
 		</div>
 		
 		<div>
-			<!-- 法律法规 -->
-			<div class="flfg" style="height:132px;overflow: hidden;">
-				<ul class="nav nav-tabs" role="tablist">
-	    			<li role="presentation" class="active"><a href="#flfg" aria-controls="home" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">法律法规</a></li>
-	    			<li role="presentation"><a href="#gszd" aria-controls="profile" role="tab" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gszd&NO_VIEWBTTN=0\')')" data-toggle="tab">公司制度</a></li>
-	                <li role="presentation"><a href="#gslh" aria-controls="profile" onclick="document.getElementById('fl').setAttribute('onclick','doViewMenuUrl(\'View?SPAGECODE=152877027229410274&stype=gslh&NO_VIEWBTTN=0\')')" role="tab" data-toggle="tab">公司例会</a></li> 
-	
-	    		</ul>
-	    		<div class="more">
-	    			<a id="fl" onclick="doViewMenuUrl('View?SPAGECODE=152877027229410274&stype=flfg&NO_VIEWBTTN=0')" href="#">更多>></a>
-	    		</div>
-	    		<div class="clearfix"></div>
-			   	<div class="tab-content">
-			    	<div role="tabpanel" class="tab-pane active" id="flfg">
-			    		<ul>
-			    		    <ylt.for dataId="1528769841860" param="bmid=001001&stype=flfg">
-	    		    			<li>
-	    		    				<p style="overflow: hidden;">$value </p>
-	    		    				<a href="upload/$value" download="$value">下载</a>
-	    		    				<span>$value</span>
-	    		    			</li>
-			    		    </ylt.for>
-			    		</ul>
-			    	</div>
-			    	<div role="tabpanel" class="tab-pane" id="gszd">
-			    		<ul>
-			    		     <ylt.for dataId="1528769841860" param="bmid=001001&stype=gszd">
-			    			<li>
-			    				<p style="overflow: hidden;">$value </p>
-			    				<a href="upload/$value" download="$value">下载</a>
-			    				<span>$value</span>
-			    			</li>
-			    			 </ylt.for>
-			    		</ul>
-			    	</div>
-	                <div role="tabpanel" class="tab-pane" id="gslh">
-			    		<ul>
-			    			<ylt.for dataId="1528769841860" param="bmid=001001&stype=gslh">
-	    		    			<li>
-	    		    				<p style="overflow: hidden;">$value </p>
-	    		    				<a href="upload/$value" download="$value">下载</a>
-	    		    				<span>$value</span>
-	    		    			</li>
-			    		    </ylt.for>
-			    		</ul>
-			    	</div>
-				</div>
-			</div>
-			<div class="aqjb" style="height:207px;overflow: hidden;">
+			
+			<div class="aqjb" style="height:355px;overflow: hidden;">
 				<div class="title">
 					<h1>安全简报</h1>
 					<a href="#" onclick="doViewMenuUrl('View?SPAGECODE=152878766215410508&NO_VIEWBTTN=0')" >更多>></a>

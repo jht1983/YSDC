@@ -1334,10 +1334,76 @@ yltUploader.viewSingProgress=function(_strFilePath,_task){
 	$("view"+_strFilePath).innerHTML=strGrees;
 	
 }
+yltUploader.viewSingPicProgress=function(_strFilePath,_task,_iHeight){
+	var a=this.getFileIco(_task.ext);
+	var strIco="images/file/"+a;
+	var strGrees="<div><img id='img" + _task.id + "' src='"+strIco+"' height='"+(_iHeight-10)+"px' style='margin-top:5px;'><span id='divptext" + _task.id + "' style='display:none;'></div>"+
+	"<div id='pro" + _task.id + "' style='position:absolute;right:0px;top:0px;background:rgba(69,198,247,0.2);width:100%;height:100%;' id='pro" + _task.id + "'></div></div>";;
+	$("view"+_strFilePath).innerHTML=strGrees;
+	
+}
 function ylt_EndWith(_str,_strEnd){
       var d=_str.length-_strEnd.length;
       return (d>=0&&_str.lastIndexOf(_strEnd)==d);
     }
+function initSingPicFile(_strFilePath,_strCode){
+	new yltUploader.Uploader({
+            url: uploadUrl,
+            target: document.getElementById("btn"+_strFilePath),
+			data: {
+					filepath:"upload",
+					fnself:_strFilePath,
+				  },
+			allows: ".png,.jpg,.bmp,.gif,.jpeg",
+            multiple: false,
+			on: {
+				upload: function (_task) {
+				}
+			},
+            UI: {
+                draw: function (task) {
+					yltUploader.viewSingPicProgress(_strFilePath,task,$("btn"+_strFilePath).clientHeight);
+										
+                },
+                update: function (task) {
+					var total = task.total || task.size,
+                        loaded = task.loaded,
+						state = task.state;
+					if (loaded != undefined) {
+                            var percentText = "0";
+							var percentProg=0;
+                            if (state == yltUploader.Uploader.PROCESSING) {
+                                var percent = Math.min(loaded * 100 / total, 100);
+								percentProg=100-percent;
+                                percentText = percent.toFixed(1);
+                                if (percentText == "100.0") percentText = "99.9";
+
+                            } else if (state == yltUploader.Uploader.COMPLETE) {
+								percentProg=0;
+                                percentText = "100";
+								$(_strCode).value=_strFilePath+task.ext;
+								
+								var objIco=$("img"+task.id);
+								if(ylt_EndWith(objIco.src,"pic.png"))
+									objIco.src="upload/"+_strFilePath+task.ext+"?id="+Math.random();
+                            }
+                            $("pro" + task.id).style.width=percentProg + "%";
+							$("divptext" + task.id).innerHTML=percentText + "%"
+                        }
+				
+                },
+				over: function (task) {
+					if (task.json.substring(0,9)!= "successed") {		
+						//miniWin('新建类型',task.json,'',550,200,'','');
+						alert(task.json);
+					}else{
+						//window.location.reload();
+					}
+				}
+            }	
+        });
+	
+}	
 function initSingFile(_strFilePath,_strCode){
 	new yltUploader.Uploader({
             url: uploadUrl,
