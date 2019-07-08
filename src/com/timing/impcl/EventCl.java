@@ -98,6 +98,8 @@ public class EventCl extends Event {
 					try {
 						dbf.sqlExe("DELETE FROM T_SIS_SYNCH WHERE UNIX_TIMESTAMP(S_TIME) < UNIX_TIMESTAMP(NOW()) - 3600 * 24", false);
 						MantraLog.WriteProgress(MantraLog.LOG_PROGRESS, "EventCl->isRun: The T_SIS_SYNCH has clean.");
+						dbf.sqlExe("DELETE FROM T_SIS_SYNCH WHERE S_DESC = '' and S_UNIT = '' and S_VALUE = '-1'", false);
+						MantraLog.WriteProgress(MantraLog.LOG_PROGRESS, "EventCl->isRun: The T_SIS_SYNCH Blank Data has clean.");
 					} catch (Exception e) {
 						MantraLog.fileCreateAndWrite(e);
 					} finally {
