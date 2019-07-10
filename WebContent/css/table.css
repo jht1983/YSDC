@@ -290,7 +290,7 @@ h2{width:95%;padding-left:22px;margin-left:auto;margin-right:auto;text-align:lef
 .fyactive{background:#337ab7;color:#fff;}
 .fypagenum:hover{background:#ddd;}
 
-.fy{position: absolute;right:0px;width: 100%; float: left; height: 30px;}
+.fy{position: absolute;width: 100%; float: left; height: 30px;}
 .fytext{line-height: 30px; font-family: "Î¢ÈíÑÅºÚ"; font-size:14px;text-align:left;cursor:hand;}
 .fyview{line-height: 30px; font-family: "Î¢ÈíÑÅºÚ"; font-size:14px;text-align:left;cursor:hand;}
 .gotext{width: 40px; margin-left: 3px; font-size:14px; }
