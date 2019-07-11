@@ -959,11 +959,13 @@ function delSysbttoOnEdit(){
         var objRow=document.createElement("tr");
         objRow.onmouseover=function(){this.style.background='#f1f1f1';};
         objRow.onmouseout=function(){this.style.background='#ffffff';};
-        objRow.innerHTML=SYS_ChangeSelId($("NO_SYS_BATCH_ROW"+_strTBId).value,_strTBId);
+		strUploadInintScript="";
+        objRow.innerHTML=SYS_ChangeUploadId(SYS_ChangeSelId($("NO_SYS_BATCH_ROW"+_strTBId).value,_strTBId));
         var objRowArea = document.createDocumentFragment();
         objTab.appendChild(objRowArea.appendChild(objRow));
         console.log(objTab.childNodes);
         SYS_InitBatchSelId(_strTBId);
+		eval(strUploadInintScript);
         calculate(_strTBId,null);
     }
 
@@ -973,8 +975,10 @@ function delSysbttoOnEdit(){
         var newTr = objTab.insertRow(objTr.rowIndex);
         newTr.onmouseover=function(){this.style.background='#f1f1f1';};
         newTr.onmouseout=function(){this.style.background='#ffffff';};
-        newTr.innerHTML=SYS_ChangeSelId($("NO_SYS_BATCH_ROW"+_strTBId).value,_strTBId);
+		strUploadInintScript="";
+        newTr.innerHTML=SYS_ChangeUploadId(SYS_ChangeSelId($("NO_SYS_BATCH_ROW"+_strTBId).value,_strTBId));
         SYS_InitBatchSelId(_strTBId);
+		eval(strUploadInintScript);
         calculate(_strTBId,objTr.rowIndex);
     }
     

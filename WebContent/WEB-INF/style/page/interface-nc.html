@@ -3,9 +3,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>主界面</title>
 </head>
-
-<body style="display:none;">
-  
+<style>
+html,body{width:100%;height:100%;}
+</style>
+<body style="overflow:none;background:url(res/images/jzrz-img.jpg);background-size:100% 100%;" scroll="no">
+  <div style="display:none;">
 <table width="100%" border="0" >
     
   <tr  >
@@ -39,7 +41,7 @@
    
    
 </table>
-
+</div>
 
  </body>
  <script>
@@ -53,6 +55,9 @@
     var iframeUrl = "http://61.134.61.241:9080/service/ssoRegServlet?ssoKey="+ssoKey+"&userCode="+userCode; 
     
     var iframe = document.createElement("iframe"); 
+	iframe.style.display="none";
+	iframe.setAttribute("width","0");
+	iframe.setAttribute("height","0");
     iframe.src = iframeUrl;
     document.getElementById("tj").href=url;
     if (iframe.attachEvent){ 
@@ -60,17 +65,24 @@
             /*
              document.getElementById("tj").click();*/
               var iframe2 = document.createElement("iframe"); 
+			  iframe2.style.display="none";
+			  iframe2.setAttribute("width","0");
+			  iframe2.setAttribute("height","0");
             iframe2.src = url;
              document.body.appendChild(iframe2);
         }); 
     } else { 
         iframe.onload = function(){ 
           /* document.getElementById("tj").click();*/
-              var iframe2 = document.createElement("iframe"); 
+              var iframe2 = document.createElement("iframe");
+			iframe2.style.display="none";
+			iframe2.setAttribute("width","0");
+			iframe2.setAttribute("height","0");			  
             iframe2.src = url;
              document.body.appendChild(iframe2);
         }; 
     } 
+	
     document.body.appendChild(iframe);
     
     document.getElementById('showSsoKey').innerHTML=ssoKey;
