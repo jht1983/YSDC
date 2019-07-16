@@ -61,7 +61,13 @@ function disableInputView(usercode,doview,loginusercode){
             
         }
     }
-    
+    var objStatuAudRunId=$(usercode.split("$")[0]+"$S_RUN_ID");
+	if(objStatuAudRunId!=null){
+		var strIsRun=getTx("O_SYS_TYPE=doserfun&spm=getFlowMsg,"+objStatuAudRunId.value,"Menu");
+		if(strIsRun=="true")
+			doview="detail";
+	}
+	
     var strcjr=document.getElementById(usercode).value;
     if((strcjr!=""&&strcjr!=loginusercode)||(doview=="detail")){
         var objbtn = document.getElementsByClassName("bttn_panel");
