@@ -84,7 +84,7 @@ $(function () {
 			<li>
 				<div class="left-number">
 					<img src="res/images/sjfd-icon.png">
-					<p>实际发电</p>
+					<p>月实际发电</p>
 				</div>
 				<div class="right-number">
 					<p><span id="realTime"  class="green">989</span>万Kwh</p>
@@ -553,6 +553,8 @@ function getTx(param,aStrUrl){
 
     function getSisDateEvl(){
         var Trvalue = subGetTx(getTx("disType=REALTIME","sis_date_ajax.v"),"eleSISData");
+        console.log(Trvalue);
+        console.log(parseFloat(Trvalue).toFixed(1));
         realTime.title=Trvalue;
         realTime.innerHTML= parseFloat(Trvalue).toFixed(1);
     }
