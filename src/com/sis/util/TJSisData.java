@@ -187,7 +187,7 @@ public class TJSisData {
 		    
 		    Calendar date = Calendar.getInstance();
 	        String year = String.valueOf(date.get(Calendar.YEAR));
-			String sql = "select R_VAL R_VAL from RPT_DAY" + year + " where DATETIME=? AND TAGCODE in ('rb1_fdl','rb2_fdl') ";
+			String sql = "select R_VAL R_VAL from RPT_DAY" + year + " where DATETIME=? AND TAGCODE in ('rby_fdl') ";
 		//	String sql = "select R_VAL R_VAL from RPT_DAY where DATETIME=? AND TAGCODE in ('DCS1:DUP9:10CRC01AO03','DCS2:DUP9:20CRC01AO03') ";
 			preStart = con.prepareStatement(sql);
 		    preStart.setString(1, sdf_ymd.format(getNextDay(new Date())));
