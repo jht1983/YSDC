@@ -98,8 +98,10 @@
             }
         }
         function submitToUpdate(){
-           
-           	var index = 0;
+        	/*覆盖(条数少于原来则多余，并且多空白行)*/
+            /*var index = 0;*/
+            /*追加*/
+           	var index = objParent.document.getElementsByName("T_ZYJXJHF$S_ID").length;
             for(var temp in inputJsonEle){
                 var valueArr = inputJsonEle[temp].split(",");
                 objParent.SYS_ADD_BATCH_ROW('1499757725842');
