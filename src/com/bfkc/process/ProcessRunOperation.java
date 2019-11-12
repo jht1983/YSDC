@@ -96,9 +96,6 @@
 			String strField = getNodeReplaceVal(_request, _strkey, _strField);
 			Map<String,String> map = new HashMap<String, String>();
 			Map<String,String> mapCon = new HashMap<String, String>();
-			
-			//用户手动选择节点, 出现分支情况
-			String strCustomNodeId = _request.getParameter("NO_custom_node_id");
 
 			if("".equals(_strField)){return;}
 			String[] strArrayTable = strField.split("`");
@@ -153,22 +150,6 @@
 							if("".equals(strVal)){
 								continue;
 							}
-						}
-						
-						if (strCustomNodeId != null && !"".equals(strCustomNodeId)
-								&& strVal.indexOf("{branch:") > -1) {
-							//{branch:11-GZPZT053#12-GZPZT054#13-GZPZT055}
-							strVal = strVal.replace("{branch:", "");
-							strVal = strVal.replace("}", "");
-							
-							String[] branches = strVal.split("#");
-							Map<String, String> branchesMap = new HashMap<>();
-							for (int k = 0; k < branches.length; k++) {
-								String[] branchIds = branches[k].split("-");
-								branchesMap.put(branchIds[0], branchIds[1]);
-							}
-							
-							strVal = branchesMap.get(strCustomNodeId);
 						}
 						
 						if(strVal.indexOf("{number:")>-1){
@@ -1527,7 +1508,7 @@
 	//							 break;
 	//						 }
 	//					 }
-					 }else if (index+1 < strNodesArray.length) {
+					 }else{
 				            strStartNode = strNodesArray[index+1];
 					 }
 	//				 if(!bFlag){
@@ -1767,11 +1748,7 @@
 					if (exRun.getRecord(0).getFieldByName("S_AUDIT_OTHER").value==null ) { // 过滤空指针
         				strReject="";
         			}else{
-//        			    strReject = exRun.getRecord(0).getFieldByName("S_AUDIT_OTHER").value.toString().split("\\|",-1)[index].split(",")[1];
-        			    String[] temp = exRun.getRecord(0).getFieldByName("S_AUDIT_OTHER").value.toString().split("\\|",-1)[index].split(",");
-        				if (temp != null && temp.length > 1) {
-        					strReject = temp[1];
-						}
+        			    strReject = exRun.getRecord(0).getFieldByName("S_AUDIT_OTHER").value.toString().split("\\|",-1)[index].split(",")[1];
         			}
 					if("4".equals(strReject)){
 						strResult = queryFlowLogBeforeAll(strFlowId, strVersion, strFlowRunId,strRunNode);
@@ -1867,70 +1844,70 @@
 //				_strFlowRunId=request.getParameter("NO_sys_flow_id");
 			}
 	//		SYS_STRBRANCHID机构ＩＤ
- 		switch (_strType) {// 审核状态:0否1是2作废3提交4逾期5逾期作废6逾期退回7跳岗
- 			case "0":
- 				_strType="驳回";
- 				break;
- 			case "1":	
- 				_strType="审核通过";
- 				break;
- 			case "2":
- 				_strType="作废";
- 				break;
- 			case "3":
- 				_strType="提交";
- 				break;
- 			case "4":
- 				_strType="逾期审批";
- 				break;
- 			case "5":
- 				_strType="逾期作废";
- 				break;
- 			case "6":
- 				_strType="逾期退回";
- 				break;
- 			case "7":
- 				_strType="跳岗";
- 				break;
- 			case "8":
- 				_strType="结束";
- 				break;
- 		}
- 		if("1".equals(_strIsOver)){
- 			_strType="流程结束";
- 		}
-//switch (_strType) {// 瀹℃牳鐘舵��:0鍚�1鏄�2浣滃簾3鎻愪氦4閫炬湡5閫炬湡浣滃簾6閫炬湡閫�鍥�7璺冲矖
-//			case "0":
-//				_strType="椹冲洖";
-//				break;
-//			case "1":	
-//				_strType="瀹℃牳閫氳繃";
-//				break;
-//			case "2":
-//				_strType="浣滃簾";
-//				break;
-//			case "3":
-//				_strType="鎻愪氦";
-//				break;
-//			case "4":
-//				_strType="閫炬湡瀹℃壒";
-//				break;
-//			case "5":
-//				_strType="閫炬湡浣滃簾";
-//				break;
-//			case "6":
-//				_strType="閫炬湡閫�鍥�";
-//				break;
-//			case "7":
-//				_strType="璺冲矖";
-//				break;
-//			case "8":
-//				_strType="缁撴潫";
-//				break;
-//		}
-//		if("1".equals(_strIsOver)){
-//			_strType="娴佺▼缁撴潫";
-//		}
+// 		switch (_strType) {// 审核状态:0否1是2作废3提交4逾期5逾期作废6逾期退回7跳岗
+// 			case "0":
+// 				_strType="驳回";
+// 				break;
+// 			case "1":	
+// 				_strType="审核通过";
+// 				break;
+// 			case "2":
+// 				_strType="作废";
+// 				break;
+// 			case "3":
+// 				_strType="提交";
+// 				break;
+// 			case "4":
+// 				_strType="逾期审批";
+// 				break;
+// 			case "5":
+// 				_strType="逾期作废";
+// 				break;
+// 			case "6":
+// 				_strType="逾期退回";
+// 				break;
+// 			case "7":
+// 				_strType="跳岗";
+// 				break;
+// 			case "8":
+// 				_strType="结束";
+// 				break;
+// 		}
+// 		if("1".equals(_strIsOver)){
+// 			_strType="流程结束";
+// 		}
+switch (_strType) {// 瀹℃牳鐘舵��:0鍚�1鏄�2浣滃簾3鎻愪氦4閫炬湡5閫炬湡浣滃簾6閫炬湡閫�鍥�7璺冲矖
+			case "0":
+				_strType="椹冲洖";
+				break;
+			case "1":	
+				_strType="瀹℃牳閫氳繃";
+				break;
+			case "2":
+				_strType="浣滃簾";
+				break;
+			case "3":
+				_strType="鎻愪氦";
+				break;
+			case "4":
+				_strType="閫炬湡瀹℃壒";
+				break;
+			case "5":
+				_strType="閫炬湡浣滃簾";
+				break;
+			case "6":
+				_strType="閫炬湡閫�鍥�";
+				break;
+			case "7":
+				_strType="璺冲矖";
+				break;
+			case "8":
+				_strType="缁撴潫";
+				break;
+		}
+		if("1".equals(_strIsOver)){
+			_strType="娴佺▼缁撴潫";
+		}
 
         
 		String strMsgContent = queryMsgTemplet(_strArrayMsgIds);
