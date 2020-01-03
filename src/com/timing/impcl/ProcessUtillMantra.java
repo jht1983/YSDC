@@ -40,7 +40,15 @@ public class ProcessUtillMantra {
 			if (_nowUserCode.equals(lastAuditUser)) {// 删除 数据 , 由于表中无独立主键, 故全条匹配
 				
 				doSql.append("DELETE FROM T_SYS_FLOW_LOG WHERE ");
-				
+				String strBakSql="INSERT INTO T_SYS_FLOWLOG_BAK (S_FLOW_ID, S_RUN_ID, S_NODE_ID, S_AUD_USER, S_AUD_DATE, S_AUD_STAUS, S_AUD_COMMENT, S_AUDIT_VERSION) VALUES ('"+
+				record.getFieldByName("S_FLOW_ID").value+"', '"+
+				record.getFieldByName("S_RUN_ID").value+"', '"+
+				record.getFieldByName("S_NODE_ID").value+"', '"+
+				record.getFieldByName("S_AUD_USER").value+"', '"+
+				record.getFieldByName("S_AUD_DATE").value+"', '"+
+				record.getFieldByName("S_AUD_STAUS").value+"', '"+
+				record.getFieldByName("S_AUD_COMMENT").value+"', '"+
+				record.getFieldByName("S_AUDIT_VERSION").value+"')";
 				for(int i = 1 ; i <= colCount ; i ++){ 
 					
 					doSql.append(record.getFieldName(i)+"='"+record.getFieldByName(record.getFieldName(i)).value.toString()+"' ");
@@ -51,6 +59,7 @@ public class ProcessUtillMantra {
 				}
 
 				dbf.sqlExe(doSql.toString(), false);
+				dbf.sqlExe(strBakSql, true);
 				
 				return true;
 			}
